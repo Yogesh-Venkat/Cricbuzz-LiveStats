@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+venv/
+.env
+.streamlit/
+*.pkl
+*.pickle
+*.db
+*.sqlite
+.DS_Store
+Thumbs.db
+*.log
