@@ -130,7 +130,7 @@ Main libraries used:
 
 ## 👨‍💻 Author
 
-- **Your Name** – [GitHub](https://github.com/your-username)
+- **Yogesg Kumar V** – [GitHub](https://github.com/Yogesh-Venkat)
 
 ---
 

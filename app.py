@@ -4,7 +4,7 @@ import sys, os
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv(r"C:\Users\yoges\OneDrive\Desktop\Guvi\Cricbuzz-LiveStats\cricbuzz_api._key.env")
+load_dotenv(r"C:\Users\yoges\OneDrive\Desktop\Guvi\Cricbuzz-LiveStats\cricbuzz_api_key.env")
 
 # Ensure project root is in sys.path
 sys.path.append(os.path.dirname(__file__))
