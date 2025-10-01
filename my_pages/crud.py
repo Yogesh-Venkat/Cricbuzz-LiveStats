@@ -26,7 +26,7 @@ def app():
             database=DB_NAME,
             auth_plugin=DB_AUTH_PLUGIN
         )
-    @st.cache_data(ttl=300)
+   
     # --- READ (Fetch Series) ---
     def fetch_series():
         conn = get_connection()
