@@ -4,6 +4,7 @@ venv/
 .env
 .env.*
 *.env
+cricbuzz_api_key.env
 .streamlit/
 *.pkl
 *.pickle
