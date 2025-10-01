@@ -1,46 +1,23 @@
 import streamlit as st
-import importlib
-import sys, os
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv(r"C:\Users\yoges\OneDrive\Desktop\Guvi\Cricbuzz-LiveStats\cricbuzz_api_key.env")
-
-# Ensure project root is in sys.path
-sys.path.append(os.path.dirname(__file__))
-
-# Import utils
-from utils.fetch_live import fetch_live_matches, fetch_scorecard
-
-# ✅ Only ONE set_page_config call
-st.set_page_config(
-    page_title="Cricbuzz LiveStats",
-    layout="centered",
-    initial_sidebar_state="expanded"
-)
-
-
-
+# Import page modules from my_pages folder
+from my_pages import home, live_match, top_players, sql_analytics, crud
 
 # Sidebar navigation
 st.sidebar.title("🏏 Cricbuzz LiveStats Dashboard")
-my_pages = {
-    "🏡 Home": "home",
-    "🎥 Live Match": "live_match",
-    "🥇 Top Player Stats": "top_players",
-    "📈 SQL Queries & Analytics": "sql_analytics",
-    "📝 CRUD Operations": "crud"
-}
+page = st.sidebar.radio(
+    "Select a page:",
+    ["🏡 Home", "🎥 Live Match", "🥇 Top Player Stats", "📈 SQL Queries & Analytics", "📝 CRUD Operations"]
+)
 
-selected_page = st.sidebar.radio("Select a page:", list(my_pages.keys()))
-
-# Import and run selected page
-try:
-    page_module = importlib.import_module(f"my_pages.{my_pages[selected_page]}")
-    page_module.app()
-except ModuleNotFoundError as e:
-    st.error(f"⚠️ Module not found: {e}")
-except AttributeError as e:
-    st.error(f"⚠️ Page is missing app() function: {e}")
-except Exception as e:
-    st.error(f"⚠️ Error loading page: {e}")
+# Run the selected page
+if page == "🏡 Home":
+    home.app()
+elif page == "🎥 Live Match":
+    live_match.app()
+elif page == "🥇 Top Player Stats":
+    top_players.app()
+elif page == "📈 SQL Queries & Analytics":
+    sql_analytics.app()
+elif page == "📝 CRUD Operations":
+    crud.app()
