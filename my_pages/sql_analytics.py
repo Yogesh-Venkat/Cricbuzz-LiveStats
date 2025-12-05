@@ -1,11 +1,15 @@
 import streamlit as st
 import os
 import pandas as pd
+# Resolve repository root relative to this file (streamlit_app/app.py)
+THIS_FILE = Path(__file__).resolve()
+REPO_ROOT = THIS_FILE.parent.parent
 
+Data_dir = REPO_ROOT / "Data"
 def app():
 
 
-    Data_dir = r"c:\Users\yoges\OneDrive\Desktop\Guvi\Cricbuzz-LiveStats\Data"
+
 
     # ✅ SQL Questions list
     qns = [
