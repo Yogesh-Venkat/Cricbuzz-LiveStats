@@ -2,7 +2,14 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
-load_dotenv(r"C:\Users\yoges\OneDrive\Desktop\Guvi\Cricbuzz-LiveStats\.env")
+from pathlib import Path
+
+# Resolve repository root relative to this file (streamlit_app/app.py)
+THIS_FILE = Path(__file__).resolve()
+REPO_ROOT = THIS_FILE.parent.parent
+API_KEY = REPO_ROOT / "cricbuzz_api_key.env"
+
+load_dotenv(API_KEY)
 
 from utils.fetch_live import fetch_live_matches, fetch_scorecard  # Make sure this exists
 
