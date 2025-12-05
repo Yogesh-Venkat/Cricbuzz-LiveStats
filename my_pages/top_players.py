@@ -7,6 +7,15 @@ from datetime import datetime
 from dotenv import load_dotenv
 from pathlib import Path
 import os
+
+THIS_FILE = Path(__file__).resolve()
+REPO_ROOT = THIS_FILE.parent.parent
+
+Data_dir = REPO_ROOT / "Data"
+
+env_path = REPO_ROOT / ".env"
+
+
 env_path = r"C:\Users\yoges\OneDrive\Desktop\Guvi\Cricbuzz-LiveStats\.env"
 load_dotenv(dotenv_path=env_path)
 DB_HOST = os.getenv("DB_HOST")
